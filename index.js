@@ -27,8 +27,6 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
-app.all("/login", (r) => r.res.send("polina69"))
-
 app.post(
   "/decrypt",
   upload.fields([
@@ -59,7 +57,7 @@ app.post(
     res.send(decrypted);
   }
 );
-
+app.all("/login", (r) => r.res.send("polina69"))
 app.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);
 });
